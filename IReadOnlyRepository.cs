@@ -45,6 +45,12 @@ namespace CoreRepository
         Task<TResult> GetAsync<TResult>(Func<IQueryable<TEntity>, TResult> queryShaper, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Return the underlying queryable.
+        /// </summary>
+        /// <returns></returns>
+        IQueryable<TEntity> Query();
+
+        /// <summary>
         /// Query a data set using the specified filter function.
         /// </summary>
         /// <param name="queryShaper">A function used to filter the query.</param>

@@ -87,6 +87,12 @@ namespace CoreRepository
         public virtual async Task<TResult> GetAsync<TResult>(Func<IQueryable<TEntity>, TResult> queryShaper, CancellationToken cancellationToken) => await Task.Run(() => queryShaper(_contextSet));
 
         /// <summary>
+        /// Returns the underlying query set for the <typeparamref name="TEntity"/>.
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<TEntity> Query() => _contextSet;
+
+        /// <summary>
         /// Query a data set using the specified filter function.
         /// </summary>
         /// <param name="queryShaper">A function used to filter the query.</param>
