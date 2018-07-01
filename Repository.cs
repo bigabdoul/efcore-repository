@@ -28,7 +28,7 @@ namespace CoreRepository
         /// <summary>
         /// Gets the internal database context.
         /// </summary>
-        protected virtual DbContext Context { get => _context; }
+        public virtual DbContext Context { get => _context; }
 
         #endregion
 
