@@ -24,8 +24,7 @@ namespace CoreRepository.Test.DependencyInjection
                 .AddScoped<IRepository<Blog>, Repository<Blog>>()
                 .AddScoped<IRepository<Category>, SqliteRepository<Category>>()
                 .AddScoped<IRepository<Product>, SqliteRepository<Product>>()
-                //.AddDbContext<TestDbContext>(options => options.UseSqlite(CreateInMemorySqliteConnection()))
-                ;
+                .AddTransient<IUnitOfWork, TestUnitOfWork>();
         }
         
         internal static SqliteConnection CreateInMemorySqliteConnection()
