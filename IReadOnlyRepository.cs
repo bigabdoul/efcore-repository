@@ -48,13 +48,13 @@ namespace CoreRepository
         /// Return the underlying queryable.
         /// </summary>
         /// <returns></returns>
-        IQueryable<TEntity> Query();
+        IQueryable<TEntity> All();
 
         /// <summary>
         /// Query a data set using the specified filter function.
         /// </summary>
         /// <param name="queryShaper">A function used to filter the query.</param>
         /// <returns></returns>
-        IQueryable<TEntity> Query(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryShaper);
+        IQueryable<TEntity> All(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryShaper);
     }
 }

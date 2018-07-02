@@ -90,14 +90,14 @@ namespace CoreRepository
         /// Returns the underlying query set for the <typeparamref name="TEntity"/>.
         /// </summary>
         /// <returns></returns>
-        public IQueryable<TEntity> Query() => _contextSet;
+        public IQueryable<TEntity> All() => _contextSet;
 
         /// <summary>
         /// Query a data set using the specified filter function.
         /// </summary>
         /// <param name="queryShaper">A function used to filter the query.</param>
         /// <returns></returns>
-        public IQueryable<TEntity> Query(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryShaper)
+        public IQueryable<TEntity> All(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryShaper)
             => queryShaper(_contextSet);
 
         /// <summary>
