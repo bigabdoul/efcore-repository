@@ -102,7 +102,7 @@ namespace CoreRepository.Test
             await productsRepo.SaveChangesAsync();
 
             // ASSERT
-            Assert.AreEqual(23, productsRepo.Query().Count());
+            Assert.AreEqual(23, productsRepo.All().Count());
         }
     }
 }
